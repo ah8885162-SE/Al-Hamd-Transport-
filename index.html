@@ -113,10 +113,21 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background-image: linear-gradient(rgba(11,31,42,0.36), rgba(11,31,42,0.36)), url('https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1600&auto=format&fit=crop');
-      background-size: cover; background-position: center;
+      background-image: linear-gradient(rgba(11,31,42,0.36), rgba(11,31,42,0.36)),
+        url('https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
       z-index: -1;
     }
+    /* Ensure better mobile visibility */
+    @media(max-width: 600px) {
+      .hero-bg {
+        background-position: top center;
+        background-size: cover;
+      }
+    }
+
     .hero-inner { padding: 48px 0; }
     .hero-grid {
       display: grid; grid-template-columns: 1fr 420px; gap: 30px; align-items: center;
@@ -152,13 +163,15 @@
 
     /* WhatsApp Floating Button */
     .whatsapp-fab {
-      position: fixed; right: 18px; bottom: 18px;
+      position: fixed; right: 18px; bottom: 60px; /* lifted up */
       font-size: 42px; color: #25D366;
       z-index: 9999; cursor: pointer;
       transition: transform 0.3s ease;
     }
     .whatsapp-fab:hover { transform: scale(1.2); }
-    @media(max-width:600px){ .whatsapp-fab { font-size: 36px; } }
+    @media(max-width:600px){
+      .whatsapp-fab { font-size: 36px; bottom: 80px; } /* extra lift for mobile */
+    }
 
     /* Footer */
     footer { padding:30px 0; background: var(--navy); color: var(--white); margin-top:40px; }
