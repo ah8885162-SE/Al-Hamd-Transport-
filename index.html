@@ -3,22 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Al‑Hamd Transport Solutions — Reliable rides, professional service</title>
-  <meta name="description" content="Al‑Hamd Transport Solutions — Reliable rides, professional service. Fleet rentals, corporate transport, airport transfers and more." />
+  <title>Al-Hamd Transport Solutions — Reliable rides, professional service</title>
+  <meta name="description" content="Al-Hamd Transport Solutions — Reliable rides, professional service. Fleet rentals, corporate transport, airport transfers and more." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230B1F2A'/%3E%3Ctext x='50' y='57' font-size='42' text-anchor='middle' fill='%23FFFFFF' font-family='Montserrat, sans-serif'%3EAH%3C/text%3E%3C/svg%3E">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/your_kit_id.js" crossorigin="anonymous"></script>
-  <!-- AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<!-- Font Awesome for social media icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
     /* ========== Variables ========== */
-    :root{
+    :root {
       --navy: #0B1F2A;
       --emerald: #10B981;
       --slate: #94A3B8;
@@ -27,158 +25,146 @@
     }
 
     /* ========== Reset & Base ========== */
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      color:var(--navy);
+    * { box-sizing: border-box; margin:0; padding:0; }
+    html, body { height:100%; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--navy);
       background: #f8fafc;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
+      line-height: 1.45;
     }
 
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
-    /* ========== Container ========== */
-    .container{width:90%;max-width:var(--max-width);margin:0 auto}
+    .container { width: 90%; max-width: var(--max-width); margin: 0 auto; }
 
     /* ========== NAVBAR ========== */
-    header{
-      position:fixed;left:0;right:0;top:0;z-index:60;
-      transition:background 250ms ease, box-shadow 250ms ease;
+    header {
+      position: fixed;
+      left: 0; right: 0; top: 0;
+      z-index: 60;
+      transition: background 250ms ease, box-shadow 250ms ease;
     }
-    .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{
-      width:46px;height:46px;border-radius:8px;background:var(--navy);display:grid;place-items:center;color:var(--white);font-weight:700;font-family:'Montserrat',sans-serif
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
     }
-/* Company name same as navbar links */
-.company-name,
-.company-sub {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  cursor: pointer;
-}
-
-/* Hover effect same as navbar links */
-.company-name:hover,
-.company-sub:hover {
-  color: #0ef; /* Same hover color as links */
-}
-
-
-    nav ul{display:flex;gap:20px;align-items:center;margin:0;padding:0;list-style:none}
-/* Navbar links */
-nav a {
-  color: #fff;                       /* White text */
-  text-shadow: 0 1px 3px rgba(0,0,0,0.8);  /* Adds contrast */
-  transition: color 0.3s ease;
-}
-
-/* Optional hover effect for links */
-nav a:hover {
-  color: #0ef;  /* Change to your accent color on hover */
-}
-
-    .cta-primary{background:var(--emerald);color:var(--white);padding:10px 16px;border-radius:8px;font-weight:700;border:none}
-
-    /* Transparent by default - gets solid on scroll */
-    header.transparent{background:transparent}
-    header.solid{background:var(--white);box-shadow:0 6px 20px rgba(11,31,42,0.07)}
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo {
+      width: 46px; height: 46px; border-radius: 8px;
+      background: var(--navy);
+      display: grid; place-items: center;
+      color: var(--white); font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .company-name, .company-sub {
+      color: #fff;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .company-name:hover, .company-sub:hover { color: #0ef; }
+    nav ul {
+      display: flex; gap: 20px; align-items: center;
+      list-style: none;
+    }
+    nav a {
+      color: #fff;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+      transition: color 0.3s ease;
+    }
+    nav a:hover { color: #0ef; }
+    .cta-primary {
+      background: var(--emerald);
+      color: var(--white);
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      border: none;
+    }
+    header.transparent { background: transparent; }
+    header.solid { background: var(--navy); box-shadow: 0 6px 20px rgba(11,31,42,0.3); }
 
     /* Mobile menu */
-    .hamburger{display:none;border:none;background:none;font-size:20px}
-    @media (max-width:860px){
-      nav ul{display:none}
-      .hamburger{display:block}
+    .hamburger { display: none; border: none; background: none; font-size: 22px; color: #fff; cursor: pointer; }
+    @media(max-width: 860px) {
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 70px; right: 20px;
+        flex-direction: column;
+        background: var(--navy);
+        padding: 20px;
+        border-radius: 10px;
+        width: 220px;
+      }
+      nav ul.show { display: flex; }
+      .hamburger { display: block; }
     }
 
     /* ========== HERO ========== */
-    .hero{
-      min-height:82vh;display:flex;align-items:center;position:relative;padding-top:80px;overflow:hidden
+    .hero {
+      min-height: 82vh;
+      display: flex; align-items: center;
+      position: relative; padding-top: 80px;
+      overflow: hidden;
     }
-    .hero-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(11,31,42,0.36), rgba(11,31,42,0.36)),url('https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1600&auto=format&fit=crop&s=6d2f6b2a0f6b1a3b5f5f2e1c7b8b9f23');background-size:cover;background-position:center;filter:contrast(1.05);z-index:-1}
-    .hero-inner{padding:48px 0}
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(11,31,42,0.36), rgba(11,31,42,0.36)), url('https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover; background-position: center;
+      z-index: -1;
+    }
+    .hero-inner { padding: 48px 0; }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 420px; gap: 30px; align-items: center;
+    }
+    @media(max-width: 920px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-card { margin-top: 20px; }
+    }
+    .hero-copy { max-width: 700px; color: var(--white); }
+    .kicker { display:inline-block; padding:6px 10px; background:rgba(255,255,255,0.08); color:var(--white); border-radius:999px; font-size:13px; margin-bottom:16px; }
+    h1 { margin:0; font-family:'Montserrat',sans-serif; font-size:44px; line-height:1.2; }
+    @media(max-width:600px){ h1{font-size:32px;} }
+    p.lead { margin-top:12px; font-size:18px; color:rgba(255,255,255,0.95); }
 
-    .hero-grid{display:grid;grid-template-columns:1fr 420px;gap:30px;align-items:center}
-    @media (max-width:920px){.hero-grid{grid-template-columns:1fr}}
+    .hero-actions { margin-top:20px; display:flex; gap:12px; flex-wrap: wrap; }
+    .btn { padding:12px 16px; border-radius:10px; font-weight:700; cursor:pointer; }
+    .btn--primary { background: var(--emerald); color: var(--white); }
+    .btn--ghost { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.4); }
 
-    .hero-copy{max-width:700px;color:var(--white)}
-    .kicker{display:inline-block;padding:6px 10px;background:rgba(255,255,255,0.08);color:var(--white);border-radius:999px;font-size:13px;margin-bottom:16px}
-    h1{margin:0;font-family:'Montserrat',sans-serif;font-size:44px;line-height:1.02}
-    p.lead{margin-top:12px;font-size:18px;color:rgba(255,255,255,0.95)}
+    .social-row { display:flex; gap:12px; margin-top:18px; flex-wrap: wrap; }
+    .social-row a { display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:999px; background:rgba(255,255,255,0.08); color:var(--white); font-weight:600; font-size:14px; }
 
-    .hero-actions{margin-top:20px;display:flex;gap:12px}
-    .btn{padding:12px 16px;border-radius:10px;border:2px solid rgba(255,255,255,0.12);font-weight:700;cursor:pointer}
-    .btn--primary{background:var(--emerald);border-color:var(--emerald);color:var(--white)}
-    .btn--ghost{background:transparent;color:var(--white)}
+    .hero-card { background:rgba(255,255,255,0.1); padding:20px; border-radius:12px; color:var(--white); }
+    .stat { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+    .stat .num { font-weight:800; font-size:20px; }
+    .stat .label { font-size:13px; color:rgba(255,255,255,0.85); }
 
-    /* Social row under hero */
-    .social-row{display:flex;gap:12px;margin-top:18px}
-    .social-row a{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:999px;background:rgba(255,255,255,0.08);color:var(--white);font-weight:600}
+    .stats { display:flex; gap:16px; margin-top:26px; flex-wrap: wrap; }
+    .stat-card { flex:1; min-width:250px; background:var(--white); padding:18px; border-radius:12px; display:flex; gap:12px; align-items:center; }
+    .stat-card .icon { width:44px;height:44px;border-radius:8px;background:var(--navy);display:grid;place-items:center;color:var(--white); }
+    .stat-card h4 { margin:0;font-size:16px; }
+    .stat-card p { margin:0;color:var(--slate);font-size:13px; }
 
-    /* Right hero card (stats) */
-    .hero-card{background:rgba(255,255,255,0.04);padding:20px;border-radius:12px;color:var(--white)}
-    .stat{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-    .stat .num{font-weight:800;font-size:20px}
-    .stat .label{font-size:13px;color:rgba(255,255,255,0.85)}
+    /* WhatsApp Floating Button */
+    .whatsapp-fab {
+      position: fixed; right: 18px; bottom: 18px;
+      font-size: 42px; color: #25D366;
+      z-index: 9999; cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .whatsapp-fab:hover { transform: scale(1.2); }
+    @media(max-width:600px){ .whatsapp-fab { font-size: 36px; } }
 
-    /* ========== STATS ROW (below hero) ========== */
-    .stats{display:flex;gap:16px;margin-top:26px}
-    .stat-card{flex:1;background:var(--white);padding:18px;border-radius:12px;display:flex;gap:12px;align-items:center}
-    .stat-card .icon{width:44px;height:44px;border-radius:8px;background:var(--navy);display:grid;place-items:center;color:var(--white)}
-    .stat-card h4{margin:0;font-size:16px}
-    .stat-card p{margin:0;color:var(--slate);font-size:13px}
-    @media (max-width:860px){.stats{flex-direction:column}}
-
-.whatsapp-fab {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  font-size: 42px;      /* Icon size */
-  color: #25D366;       /* WhatsApp green */
-  z-index: 9999;        /* Keep it above everything */
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.whatsapp-fab:hover {
-  transform: scale(1.2);
-}
-
-@media(max-width: 600px) {
-  .whatsapp-fab {
-    font-size: 36px;    /* Smaller on mobile */
-  }
-}
-
-
-/* Hover effect */
-.whatsapp-fab:hover {
-  transform: scale(1.2);
-}
-
-/* Smaller on mobile */
-@media(max-width: 600px) {
-  .whatsapp-fab {
-    font-size: 36px;
-  }
-}
-
-    /* ========== FOOTER ========== */
-    footer{padding:30px 0;margin-top:0px;background:transparent}
-
-    /* ========== Utilities ========== */
-    .muted{color:var(--slate)}
-    .hidden{display:none}
-
-    /* ========== Accessibility focus ========== */
-    a:focus,a.button:focus,button:focus{outline:3px solid rgba(16,185,129,0.18);outline-offset:3px}
+    /* Footer */
+    footer { padding:30px 0; background: var(--navy); color: var(--white); margin-top:40px; }
+    footer .muted { color: var(--slate); font-size:13px; }
+    footer .logo { width:40px;height:40px;font-size:18px;background:var(--navy);color:var(--white);display:grid;place-items:center;border-radius:8px; }
+    footer .container { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
   </style>
 </head>
 <body>
@@ -187,14 +173,13 @@ nav a:hover {
     <div class="brand">
       <div class="logo">AH</div>
       <div>
-        <!-- Added class 'nav-link' so company name inherits the same style -->
-        <div class="company-name nav-link">Al-Hamd Transport</div>
-        <div class="company-sub nav-link">Solutions</div>
+        <div class="company-name">Al-Hamd Transport</div>
+        <div class="company-sub">Solutions</div>
       </div>
     </div>
 
     <nav aria-label="Primary navigation">
-      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="primary-menu"><i class="fa fa-bars"></i></button>
+      <button class="hamburger" id="hamburger"><i class="fa fa-bars"></i></button>
       <ul id="primary-menu">
         <li><a href="#home">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -207,114 +192,76 @@ nav a:hover {
   </div>
 </header>
 
-
-  <!-- HERO -->
-  <main>
-    <section class="hero" id="home" role="banner">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="container hero-inner">
-        <div class="hero-grid">
-
-          <div class="hero-copy" data-aos="fade-up">
-            <span class="kicker">Professional • Reliable • Safe</span>
-            <h1>Reliable rides. <span style="color:var(--emerald)">Professional service.</span></h1>
-            <p class="lead">From city commutes to corporate moves — we’ve got your route. Book modern, comfortable vehicles with trained drivers and transparent pricing.</p>
-
-            <div class="hero-actions">
-              <a class="btn btn--primary" href="contact.html">Get a Quote</a>
-              <a class="btn btn--ghost" href="vehicles.html">View Vehicles</a>
-            </div>
-
-            <div class="social-row" aria-label="Follow us">
-              <a href="https://www.facebook.com/share/19mF64Bm3M/" aria-label="Follow on Facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
-              <a href="https://www.instagram.com/alhamdtransportservices_19205?igsh=ajRveWx6dzc3ejFt" aria-label="Follow on Instagram"><i class="fab fa-instagram"></i> Instagram</a>
-              <a href="https://www.linkedin.com/company/108441956/admin/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BMWrAIrXoRPukt4RlE8kUdA%3D%3D" aria-label="Follow on LinkedIn"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-              <a href="tiktok.com/@alhamdtransportservice" aria-label="Follow on TikTok"><i class="fab fa-tiktok"></i> TikTok</a>
-            </div>
+<main>
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="container hero-inner">
+      <div class="hero-grid">
+        <div class="hero-copy" data-aos="fade-up">
+          <span class="kicker">Professional • Reliable • Safe</span>
+          <h1>Reliable rides. <span style="color:var(--emerald)">Professional service.</span></h1>
+          <p class="lead">From city commutes to corporate moves — we’ve got your route. Book modern, comfortable vehicles with trained drivers and transparent pricing.</p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="contact.html">Get a Quote</a>
+            <a class="btn btn--ghost" href="vehicles.html">View Vehicles</a>
           </div>
-
-          <aside class="hero-card" data-aos="fade-left">
-            <div class="stat"><div class="num">100+</div><div><div class="label">Trips Completed</div></div></div>
-            <div class="stat"><div class="num">24/7</div><div><div class="label">Support</div></div></div>
-            <div class="stat"><div class="num">50+</div><div><div class="label">Vehicles</div></div></div>
-            <div style="margin-top:14px"><a href="contact.html" class="btn btn--primary" style="width:100%;display:inline-block;text-align:center">Book Now</a></div>
-          </aside>
-
-        </div>
-
-        <!-- small stats row -->
-        <div class="stats" data-aos="fade-up" style="margin-top:34px">
-          <div class="stat-card"><div class="icon"><i class="fas fa-shield-alt"></i></div><div><h4>Insured Drivers</h4><p class="muted">Safety first — all drivers verified and insured.</p></div></div>
-          <div class="stat-card"><div class="icon"><i class="fas fa-clock"></i></div><div><h4>On‑time Service</h4><p class="muted">We value punctuality for every booking.</p></div></div>
-          <div class="stat-card"><div class="icon"><i class="fas fa-wallet"></i></div><div><h4>Transparent Pricing</h4><p class="muted">No hidden fees — clear billing and invoices.</p></div></div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-        <div style="display:flex;gap:14px;align-items:center">
-          <div class="logo" style="width:40px;height:40px;font-size:18px">AH</div>
-          <div>
-            <div style="font-weight:700">Al‑Hamd Transport</div>
-            <div class="muted" style="font-size:13px">Reliable rides. Professional service.</div>
+          <div class="social-row">
+            <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <a href="#"><i class="fab fa-tiktok"></i> TikTok</a>
           </div>
         </div>
-        <div class="muted">&copy; <span id="year"></span> Al‑Hamd Transport Solutions — All rights reserved</div>
+        <aside class="hero-card" data-aos="fade-left">
+          <div class="stat"><div class="num">100+</div><div><div class="label">Trips Completed</div></div></div>
+          <div class="stat"><div class="num">24/7</div><div><div class="label">Support</div></div></div>
+          <div class="stat"><div class="num">50+</div><div><div class="label">Vehicles</div></div></div>
+          <div style="margin-top:14px"><a href="contact.html" class="btn btn--primary" style="width:100%;display:inline-block;text-align:center">Book Now</a></div>
+        </aside>
       </div>
-    </footer>
-  </main>
 
-<!-- WhatsApp floating button -->
-<a class="whatsapp-fab" 
-   href="https://wa.me/923125097629?text=Hello%20Al-Hamd%2C%20I%20want%20to%20book%20a%20vehicle" 
-   aria-label="Chat on WhatsApp" 
-   target="_blank" 
-   rel="noopener noreferrer">
-  <i class="fab fa-whatsapp"></i>
-</a>
+      <div class="stats" data-aos="fade-up">
+        <div class="stat-card"><div class="icon"><i class="fas fa-shield-alt"></i></div><div><h4>Insured Drivers</h4><p class="muted">Safety first — all drivers verified and insured.</p></div></div>
+        <div class="stat-card"><div class="icon"><i class="fas fa-clock"></i></div><div><h4>On-time Service</h4><p class="muted">We value punctuality for every booking.</p></div></div>
+        <div class="stat-card"><div class="icon"><i class="fas fa-wallet"></i></div><div><h4>Transparent Pricing</h4><p class="muted">No hidden fees — clear billing and invoices.</p></div></div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    // Initialize AOS
-    AOS.init({duration:700, once:true, easing:'ease-out-cubic'});
+  <footer>
+    <div class="container">
+      <div style="display:flex;gap:14px;align-items:center">
+        <div class="logo">AH</div>
+        <div>
+          <div style="font-weight:700">Al-Hamd Transport</div>
+          <div class="muted">Reliable rides. Professional service.</div>
+        </div>
+      </div>
+      <div class="muted">&copy; <span id="year"></span> Al-Hamd Transport Solutions — All rights reserved</div>
+    </div>
+  </footer>
+</main>
 
-    // Navbar background toggle on scroll
-    const header = document.getElementById('site-header');
-    const hero = document.querySelector('.hero');
-    const primaryMenu = document.getElementById('primary-menu');
-    const hamburger = document.getElementById('hamburger');
+<a class="whatsapp-fab" href="https://wa.me/923125097629" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-    function onScroll(){
-      const y = window.scrollY;
-      if(y > 40){ header.classList.remove('transparent'); header.classList.add('solid'); }
-      else { header.classList.add('transparent'); header.classList.remove('solid'); }
-    }
-    document.addEventListener('scroll', onScroll, {passive:true});
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({duration:700, once:true, easing:'ease-out-cubic'});
 
-    // Mobile menu toggle
-    hamburger.addEventListener('click', ()=>{
-      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', String(!expanded));
-      if(primaryMenu.style.display === 'flex'){ primaryMenu.style.display = 'none'; }
-      else { primaryMenu.style.display = 'flex'; primaryMenu.style.flexDirection = 'column'; primaryMenu.style.gap = '12px'; }
-    });
+  const header = document.getElementById('site-header');
+  const hamburger = document.getElementById('hamburger');
+  const primaryMenu = document.getElementById('primary-menu');
 
-    // Smooth scrolling for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', function(e){
-        e.preventDefault();
-        const id = this.getAttribute('href').slice(1);
-        const el = document.getElementById(id);
-        if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
-      });
-    });
+  document.addEventListener('scroll', ()=>{
+    if(window.scrollY > 40){ header.classList.add('solid'); header.classList.remove('transparent'); }
+    else{ header.classList.add('transparent'); header.classList.remove('solid'); }
+  });
 
-    // Year update
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  hamburger.addEventListener('click', ()=>{
+    primaryMenu.classList.toggle('show');
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
