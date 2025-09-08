@@ -25,20 +25,18 @@
       transition:background 250ms ease, box-shadow 250ms ease;
     }
     header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 60;
-  transition: background 250ms ease, box-shadow 250ms ease;
-  background: transparent; /* Start transparent */
-}
-
-/* When scrolling, header gets solid background */
-header.solid {
-  background: var(--navy);
-  box-shadow: 0 6px 20px rgba(11, 31, 42, 0.3);
-}
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 60;
+      transition: background 250ms ease, box-shadow 250ms ease;
+      background: transparent; /* Start transparent */
+    }
+    header.solid {
+      background: var(--navy);
+      box-shadow: 0 6px 20px rgba(11, 31, 42, 0.3);
+    }
 
     .nav-wrap{display:flex;justify-content:space-between;align-items:center;padding:18px 0;}
     .brand{display:flex;align-items:center;gap:12px;}
@@ -52,7 +50,11 @@ header.solid {
     header.transparent{background:transparent;}
     header.solid{background:var(--navy);box-shadow:0 6px 20px rgba(11,31,42,0.3);}
     .hamburger{display:none;border:none;background:none;font-size:20px;cursor:pointer;}
-    @media(max-width:860px){nav ul{display:none;flex-direction:column;gap:12px;} .hamburger{display:block;}}
+    @media(max-width:860px){
+      nav ul{display:none;flex-direction:column;gap:12px;background:var(--navy);padding:20px;border-radius:10px;position:absolute;top:70px;right:20px;width:200px;}
+      nav ul.active{display:flex;}
+      .hamburger{display:block;color:#fff;}
+    }
 
     /* ===== Page Header ===== */
     .page-header{
@@ -66,6 +68,10 @@ header.solid {
     }
     .page-header h1{font-family:'Montserrat',sans-serif;font-size:48px;margin:0;}
     .page-header p{margin-top:12px;font-size:20px;color:rgba(255,255,255,0.9);}
+    @media(max-width:768px){
+      .page-header h1{font-size:32px;}
+      .page-header p{font-size:16px;}
+    }
 
     :root {
       --navy: #0b1f2a;
@@ -91,247 +97,130 @@ header.solid {
       text-align: center;
       padding: 80px 20px;
     }
-
-    .hero h1 {
-      margin: 0;
-      font-size: 40px;
-      font-weight: bold;
+    .hero h1 {margin: 0;font-size: 40px;font-weight: bold;}
+    .hero p {margin-top: 10px;font-size: 18px;opacity: 0.9;}
+    @media(max-width:768px){
+      .hero h1{font-size:28px;}
+      .hero p{font-size:15px;}
     }
 
-    .hero p {
-      margin-top: 10px;
-      font-size: 18px;
-      opacity: 0.9;
+    /* Main Container */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding: 50px 10%;
+    }
+    @media (max-width: 900px) {
+      .contact-container {grid-template-columns: 1fr;padding:30px 5%;}
     }
 
-/* Main Container */
-.contact-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  padding: 50px 10%;
-}
-
-@media (max-width: 900px) {
-  .contact-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Navy Contact Form */
-.contact-form {
-  background: var(--navy);
-  color: #fff;
-  padding: 35px;
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centers all content horizontally */
-}
-
-.contact-form:hover {
-  transform: translateY(-5px);
-}
-
-.contact-form h2 {
-  margin-bottom: 25px;
-  color: #fff;
-  text-align: center;
-  font-size: 26px;
-  font-weight: 600;
-}
-
-/* Form fields wrapper to center them */
-.contact-form form {
-  width: 100%;
-  max-width: 400px; /* Control form width for center alignment */
-}
-
-/* Floating Labels */
-.form-group {
-  position: relative;
-  margin-bottom: 25px;
-  width: 100%;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 14px 16px;
-  border: 2px solid transparent;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
-  font-size: 15px;
-  outline: none;
-  transition: all 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: var(--emerald);
-  box-shadow: 0 0 8px rgba(37, 211, 102, 0.4);
-  background: rgba(255, 255, 255, 0.2);
-}
-
-/* Label Animation */
-.form-group label {
-  position: absolute;
-  top: 14px;
-  left: 16px;
-  color: #ddd;
-  font-size: 15px;
-  pointer-events: none;
-  transition: 0.3s ease;
-  background: transparent;
-}
-
-.form-group input:focus + label,
-.form-group input:not(:placeholder-shown) + label,
-.form-group textarea:focus + label,
-.form-group textarea:not(:placeholder-shown) + label {
-  top: -8px;
-  left: 12px;
-  font-size: 12px;
-  color: var(--emerald);
-  background: var(--navy);
-  padding: 0 5px;
-  border-radius: 5px;
-}
-
-/* Submit Button */
-.submit-btn {
-  display: block;
-  width: 100%;
-  padding: 14px;
-  border-radius: 12px;
-  border: none;
-  background: var(--emerald);
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
-  margin-top: 10px;
-}
-
-.submit-btn:hover {
-  background: #128c7e;
-  transform: translateY(-2px);
-}
-
-    /* Contact Info */
-    .contact-info {
+    /* Navy Contact Form */
+    .contact-form {
+      background: var(--navy);
+      color: #fff;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      align-items: center;
+    }
+    .contact-form:hover {transform: translateY(-5px);}
+    .contact-form h2 {margin-bottom: 25px;color: #fff;text-align: center;font-size: 26px;font-weight: 600;}
+    .contact-form form {width: 100%;max-width: 400px;}
+
+    /* Floating Labels */
+    .form-group {position: relative;margin-bottom: 25px;width: 100%;}
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 15px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--emerald);
+      box-shadow: 0 0 8px rgba(37, 211, 102, 0.4);
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .form-group label {
+      position: absolute;top: 14px;left: 16px;color: #ddd;font-size: 15px;pointer-events: none;
+      transition: 0.3s ease;background: transparent;
+    }
+    .form-group input:focus + label,
+    .form-group input:not(:placeholder-shown) + label,
+    .form-group textarea:focus + label,
+    .form-group textarea:not(:placeholder-shown) + label {
+      top: -8px;left: 12px;font-size: 12px;color: var(--emerald);
+      background: var(--navy);padding: 0 5px;border-radius: 5px;
     }
 
+    /* Submit Button */
+    .submit-btn {
+      display: block;width: 100%;padding: 14px;border-radius: 12px;border: none;
+      background: var(--emerald);color: #fff;font-size: 16px;font-weight: 600;
+      cursor: pointer;transition: 0.3s ease;margin-top: 10px;
+    }
+    .submit-btn:hover {background: #128c7e;transform: translateY(-2px);}
+
+    /* Contact Info */
+    .contact-info {display: flex;flex-direction: column;gap: 20px;}
     .info-card {
-      background: var(--navy);
-      color: var(--white);
-      padding: 20px;
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      background: var(--navy);color: var(--white);padding: 20px;border-radius: 15px;
+      display: flex;align-items: center;gap: 15px;box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       transition: var(--transition);
     }
+    .info-card:hover {transform: translateY(-3px);background: #132f40;}
+    .info-card i {font-size: 22px;background: var(--emerald);color: var(--white);padding: 10px;border-radius: 50%;}
+    .map {margin-top: 20px;border-radius: 15px;overflow: hidden;box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);}
+    iframe {width: 100%;height: 250px;border: 0;}
 
-    .info-card:hover {
-      transform: translateY(-3px);
-      background: #132f40;
-    }
-
-    .info-card i {
-      font-size: 22px;
-      background: var(--emerald);
-      color: var(--white);
-      padding: 10px;
-      border-radius: 50%;
-    }
-
-    .map {
-      margin-top: 20px;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    iframe {
-      width: 100%;
-      height: 250px;
-      border: 0;
-    }
-     /* Whatsapp FAB */
+    /* WhatsApp FAB (same as home page) */
     .whatsapp-fab {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  font-size: 42px;      /* Icon size */
-  color: #25D366;       /* WhatsApp green */
-  z-index: 9999;        /* Keep it above everything */
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 55px;
+      height: 55px;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 9999;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .whatsapp-fab:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    }
+    @media(max-width:600px){
+      .whatsapp-fab{width:50px;height:50px;font-size:24px;}
+    }
 
-.whatsapp-fab:hover {
-  transform: scale(1.2);
-}
-
-@media(max-width: 600px) {
-  .whatsapp-fab {
-    font-size: 36px;    /* Smaller on mobile */
-  }
-}
-
-
-/* Hover effect */
-.whatsapp-fab:hover {
-  transform: scale(1.2);
-}
-
-/* Smaller on mobile */
-@media(max-width: 600px) {
-  .whatsapp-fab {
-    font-size: 36px;
-  }
-}
-/* ===== Footer ===== */
-footer {
-  padding: 30px 0;
-  margin-top: 0;
-  background: rgba(1, 9, 14, 0.932);   /* Transparent dark background */
-  color: #ffffff;                      /* White text */
-  text-align: center;
-}
-
-/* Keep the logo same as before */
-footer .logo {
-  width: 40px;
-  height: 40px;
-  font-size: 18px;
-  display: inline-block;
-  margin-bottom: 10px;
-}
-
-/* Footer text links in white */
-footer h4,
-footer p,
-footer a {
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-/* Hover effect for links */
-footer a:hover {
-  color: var(--emerald);                /* Accent color on hover */
-}
-
+    /* ===== Footer ===== */
+    footer {
+      padding: 30px 0;
+      margin-top: 0;
+      background: rgba(1, 9, 14, 0.932);
+      color: #ffffff;
+      text-align: center;
+    }
+    footer .logo {width: 40px;height: 40px;font-size: 18px;display: inline-block;margin-bottom: 10px;}
+    footer h4,footer p,footer a {color: #ffffff;text-decoration: none;transition: color 0.3s;}
+    footer a:hover {color: var(--emerald);}
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -346,7 +235,6 @@ footer a:hover {
         <div class="company-sub nav-link">Solutions</div>
       </div>
     </div>
-
     <nav aria-label="Primary navigation">
       <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="primary-menu"><i class="fa fa-bars"></i></button>
       <ul id="primary-menu">
@@ -369,43 +257,42 @@ footer a:hover {
 
 <!-- Main Contact Container -->
 <div class="contact-container">
-  <!-- Contact Form with Formspree -->
-<div class="contact-form">
-  <h2>Send Us a Message</h2>
-  <form action="https://formspree.io/f/mzzavjvd" method="POST" autocomplete="off">
-    <div class="form-group">
-      <input type="text" name="name" id="name" placeholder=" " required>
-      <label for="name">Your Name</label>
-    </div>
-    <div class="form-group">
-      <input type="email" name="email" id="email" placeholder=" " required>
-      <label for="email">Email Address</label>
-    </div>
-    <div class="form-group">
-      <input type="text" name="phone" id="phone" placeholder=" " required>
-      <label for="phone">Phone Number</label>
-    </div>
-    <div class="form-group">
-      <textarea name="message" id="message" rows="5" placeholder=" " required></textarea>
-      <label for="message">Your Message</label>
-    </div>
-    <button type="submit" class="submit-btn">Send Message</button>
-  </form>
-</div>
+  <!-- Contact Form -->
+  <div class="contact-form">
+    <h2>Send Us a Message</h2>
+    <form action="https://formspree.io/f/mzzavjvd" method="POST" autocomplete="off">
+      <div class="form-group">
+        <input type="text" name="name" id="name" placeholder=" " required>
+        <label for="name">Your Name</label>
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" id="email" placeholder=" " required>
+        <label for="email">Email Address</label>
+      </div>
+      <div class="form-group">
+        <input type="text" name="phone" id="phone" placeholder=" " required>
+        <label for="phone">Phone Number</label>
+      </div>
+      <div class="form-group">
+        <textarea name="message" id="message" rows="5" placeholder=" " required></textarea>
+        <label for="message">Your Message</label>
+      </div>
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+  </div>
 
-
-  <!-- Right Side: Contact Info & Map -->
+  <!-- Right Side -->
   <div class="contact-info">
     <div class="info-card"><i class="fas fa-map-marker-alt"></i> <span>Jhelum, Pakistan</span></div>
     <div class="info-card"><i class="fas fa-phone"></i> <span>+92 312 5097629</span></div>
     <div class="info-card"><i class="fas fa-envelope"></i> <span>alhamdtransportservices1@gmail.com</span></div>
     <div class="info-card"><i class="fas fa-clock"></i> <span>Available 24/7</span></div>
-    
-    <!-- Map -->
     <div class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3344.363489333554!2d73.195775!3d33.046896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDAyJzQ4LjgiTiA3M8KwMTEnNDQuOCJF!5e0!3m2!1sen!2s!4v1756695772954!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3344.363489333554!2d73.195775!3d33.046896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDAyJzQ4LjgiTiA3M8KwMTEnNDQuOCJF!5e0!3m2!1sen!2s!4v1756695772954!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
   </div>
 </div>
+
 <!-- Footer -->
 <footer>
   <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
@@ -419,6 +306,7 @@ footer a:hover {
     <div class="muted">&copy; <span id="year"></span> Al-Hamd Transport Solutions — All rights reserved</div>
   </div>
 </footer>
+
 <!-- WhatsApp floating button -->
 <a class="whatsapp-fab" 
    href="https://wa.me/923125097629?text=Hello%20Al-Hamd%2C%20I%20want%20to%20book%20a%20vehicle" 
@@ -437,8 +325,12 @@ footer a:hover {
       header.classList.remove("solid");
     }
   });
+  // Mobile menu toggle
+  document.getElementById("hamburger").addEventListener("click", function(){
+    document.getElementById("primary-menu").classList.toggle("active");
+  });
+  // Dynamic year
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-
-
 </body>
 </html>
